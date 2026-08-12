@@ -1,1 +1,88 @@
+/* ==========================================================
+   V4.5 — FINAL LOGO / CLARA SPACING OVERRIDE
+   Must remain at END of stylesheet
+========================================================== */
 
+/*
+  Five9 Web Messenger is narrow enough to trigger
+  mobile breakpoints even inside desktop Admin Preview.
+
+  These rules intentionally override BOTH desktop
+  and mobile logo sizing.
+*/
+
+.root .pn-msg-list-scroller::before {
+
+    content: "" !important;
+
+    display: block !important;
+
+    width: 190px !important;
+    height: 58px !important;
+
+    margin:
+        10px auto 2px auto !important;
+
+    background-image:
+        url("https://cdn-ildiied.nitrocdn.com/jbCTYQVcJIpxcoSiWtkKYsjwgnCWlMpM/assets/images/source/rev-4fe3128/roundpointmortgage.com/wp-content/uploads/2024/08/RP_Logo_C.svg") !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-position:
+        center !important;
+
+    background-size:
+        contain !important;
+
+    flex:
+        0 0 auto !important;
+}
+
+
+/*
+  Remove unnecessary flex spacing between
+  branding and Clara's first message.
+*/
+
+.root .pn-msg-list__spacer {
+
+    flex:
+        0 0 0px !important;
+
+    min-height:
+        0 !important;
+
+}
+
+
+/*
+  Five9's narrow widget triggers this breakpoint,
+  so explicitly preserve our desired logo treatment.
+*/
+
+@media (max-width: 600px) {
+
+    .root .pn-msg-list-scroller::before {
+
+        width:
+            190px !important;
+
+        height:
+            58px !important;
+
+        margin:
+            10px auto 2px auto !important;
+    }
+
+
+    .root .pn-msg-list__spacer {
+
+        flex:
+            0 0 0px !important;
+
+        min-height:
+            0 !important;
+    }
+
+}
