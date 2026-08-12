@@ -720,3 +720,145 @@
         6px !important;
 
 }
+/* ==========================================================
+   V4.2 — FIX FIVE9 MESSAGE COMPOSER SHAPE
+========================================================== */
+
+/*
+ Outer composer wrapper
+*/
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+    background:
+        #FFFFFF !important;
+
+    border:
+        1px solid #CDD2D9 !important;
+
+    border-radius:
+        14px !important;
+
+    overflow:
+        hidden !important;
+
+    box-shadow:
+        0 1px 5px rgba(36, 41, 49, 0.04) !important;
+
+}
+
+
+/*
+ Remove conflicting borders/backgrounds from nested
+ Five9 composer elements.
+*/
+.root .pn-msg-input__wrapper *,
+.root .pn-msg-input__wrapper textarea,
+.root .pn-msg-input__wrapper input,
+.root .pn-msg-input__wrapper [contenteditable="true"] {
+
+    border-color:
+        transparent !important;
+
+    box-shadow:
+        none !important;
+
+}
+
+
+/*
+ Inner text-entry area
+*/
+.root .pn-msg-input__wrapper textarea,
+.root .pn-msg-input__wrapper input,
+.root .pn-msg-input__wrapper [contenteditable="true"] {
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    outline:
+        0 !important;
+
+    border-radius:
+        0 !important;
+
+}
+
+
+/*
+ Focus state applied to the complete composer,
+ not just the inner text field.
+*/
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper:focus-within {
+
+    border:
+        1px solid #5367D9 !important;
+
+    box-shadow:
+        0 0 0 2px rgba(83, 103, 217, 0.14) !important;
+
+}
+
+
+/*
+ Prevent nested Five9 controls from creating
+ square edges inside the rounded shell.
+*/
+.root .pn-msg-input__wrapper > div {
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        inherit !important;
+
+}
+
+
+/*
+ Keep left / right action areas aligned
+ within the rounded composer.
+*/
+.root .pn-msg-input__wrapper button {
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+
+}
+
+
+/*
+ Ensure icons do not protrude beyond rounded boundary.
+*/
+.root .pn-msg-input__wrapper {
+
+    padding-left:
+        4px !important;
+
+    padding-right:
+        4px !important;
+
+}
+
+
+/*
+ Mobile consistency
+*/
+@media (max-width: 600px) {
+
+    .root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+        border-radius:
+            13px !important;
+
+    }
+
+}
