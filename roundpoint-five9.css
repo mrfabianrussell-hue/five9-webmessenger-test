@@ -1,0 +1,172 @@
+/*
+==========================================================
+ RoundPoint Mortgage
+ Five9 Web Messenger - Test Theme
+ Version: 0.1
+ Purpose: Initial branding / connectivity test
+==========================================================
+*/
+
+
+/* -------------------------------------------------------
+   BRAND VARIABLES
+------------------------------------------------------- */
+
+:root {
+    --rp-purple: #7769d8;
+    --rp-purple-dark: #6255c5;
+    --rp-purple-light: #f1effc;
+
+    --rp-teal: #20b8c5;
+
+    --rp-charcoal: #292a2f;
+    --rp-text: #38393e;
+    --rp-muted: #73757c;
+
+    --rp-white: #ffffff;
+    --rp-light: #f7f7f8;
+    --rp-border: #dedfe3;
+}
+
+
+/* -------------------------------------------------------
+   FIVE9 WEB MESSENGER ROOT
+------------------------------------------------------- */
+
+.root {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    color: var(--rp-text) !important;
+}
+
+
+/* -------------------------------------------------------
+   MESSAGE INPUT
+   Selector based on Five9 Web Messenger CSS structure
+------------------------------------------------------- */
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+    background-color: var(--rp-white) !important;
+
+    border:
+        1px solid
+        var(--rp-border) !important;
+
+    border-radius: 12px !important;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease !important;
+}
+
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper:focus-within {
+
+    border-color:
+        var(--rp-purple) !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(119, 105, 216, 0.15) !important;
+}
+
+
+/* -------------------------------------------------------
+   CHAT LAUNCH BUTTON
+------------------------------------------------------- */
+
+.root .chat-button.chat-button {
+
+    background-color:
+        var(--rp-purple) !important;
+
+    color:
+        var(--rp-white) !important;
+
+    border:
+        none !important;
+
+    border-radius:
+        50% !important;
+
+    box-shadow:
+        0 8px 24px
+        rgba(41, 42, 47, 0.22) !important;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease !important;
+}
+
+
+.root .chat-button.chat-button:hover {
+
+    background-color:
+        var(--rp-purple-dark) !important;
+
+    transform:
+        translateY(-2px) !important;
+}
+
+
+/* -------------------------------------------------------
+   GENERAL BUTTON TREATMENT
+------------------------------------------------------- */
+
+.root button {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+}
+
+
+/* -------------------------------------------------------
+   LINKS
+------------------------------------------------------- */
+
+.root a {
+
+    color:
+        var(--rp-purple) !important;
+
+}
+
+
+/* -------------------------------------------------------
+   ACCESSIBILITY
+------------------------------------------------------- */
+
+.root button:focus-visible,
+.root a:focus-visible,
+.root input:focus-visible,
+.root textarea:focus-visible {
+
+    outline:
+        3px solid
+        rgba(32, 184, 197, 0.35) !important;
+
+    outline-offset:
+        2px !important;
+}
+
+
+/* -------------------------------------------------------
+   MOBILE
+------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+        border-radius:
+            10px !important;
+    }
+
+}
