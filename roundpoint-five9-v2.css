@@ -1,0 +1,416 @@
+/*
+==========================================================
+ RoundPoint Mortgage
+ Five9 Web Messenger - V2
+ Tuned from live widget screenshot
+==========================================================
+*/
+
+:root {
+    --rp-brand: #65758e;
+    --rp-brand-dark: #56657c;
+
+    --rp-conversation: #4B5DFF;
+    --rp-conversation-dark: #394BE8;
+
+    --rp-charcoal: #3f4248;
+    --rp-text: #55585f;
+    --rp-muted: #7b7f86;
+
+    --rp-white: #ffffff;
+    --rp-surface: #f7f8fa;
+    --rp-border: #dfe2e7;
+
+    --rp-radius: 14px;
+}
+
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+.root {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    color: var(--rp-text) !important;
+}
+
+
+/* ==========================================================
+   MAIN MESSENGER BACKGROUND
+========================================================== */
+
+.root,
+.root > div {
+    background-color: var(--rp-surface);
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.root header,
+.root [class*="header"] {
+    box-shadow: none !important;
+}
+
+
+/*
+Keep the current Five9 Brand Color controlling the header.
+This section simply improves text appearance.
+*/
+
+.root header *,
+.root [class*="header"] * {
+    letter-spacing: -0.1px;
+}
+
+
+/* ==========================================================
+   SYSTEM / JOIN MESSAGE
+========================================================== */
+
+.root [class*="system"],
+.root [class*="event"],
+.root [class*="joined"] {
+    color: var(--rp-muted) !important;
+
+    font-size: 13px !important;
+}
+
+
+/* ==========================================================
+   MESSAGE AREA
+========================================================== */
+
+.root [class*="messages"],
+.root [class*="conversation"] {
+    background-color: var(--rp-surface) !important;
+}
+
+
+/* ==========================================================
+   BOT MESSAGE BUBBLES
+========================================================== */
+
+.root [class*="message"] [class*="bubble"],
+.root [class*="message-content"],
+.root [class*="msg-content"] {
+
+    border-radius: var(--rp-radius) !important;
+}
+
+
+/*
+White agent / bot cards
+*/
+
+.root [class*="incoming"] [class*="bubble"],
+.root [class*="incoming"] [class*="message"],
+.root [class*="agent"] [class*="bubble"] {
+
+    background-color: var(--rp-white) !important;
+
+    border:
+        1px solid
+        rgba(0,0,0,0.04) !important;
+
+    box-shadow:
+        0 3px 12px
+        rgba(39, 43, 51, 0.08) !important;
+
+    border-radius:
+        14px 14px 14px 5px !important;
+}
+
+
+/* ==========================================================
+   CUSTOMER MESSAGE
+========================================================== */
+
+.root [class*="outgoing"] [class*="bubble"],
+.root [class*="user"] [class*="bubble"] {
+
+    background:
+        var(--rp-conversation) !important;
+
+    color:
+        var(--rp-white) !important;
+
+    border-radius:
+        14px 14px 5px 14px !important;
+}
+
+
+/* ==========================================================
+   MESSAGE TEXT
+========================================================== */
+
+.root [class*="message"] {
+
+    line-height:
+        1.42 !important;
+}
+
+
+/* ==========================================================
+   AVATAR
+========================================================== */
+
+.root [class*="avatar"] {
+
+    box-shadow:
+        none !important;
+}
+
+
+/*
+Subtle modernization of round avatar
+*/
+
+.root [class*="avatar"] img,
+.root [class*="avatar"] > div {
+
+    border-radius:
+        50% !important;
+}
+
+
+/* ==========================================================
+   TIMESTAMP
+========================================================== */
+
+.root [class*="time"],
+.root [class*="timestamp"] {
+
+    color:
+        #8b8e94 !important;
+
+    font-size:
+        11px !important;
+}
+
+
+/* ==========================================================
+   MESSAGE INPUT CONTAINER
+========================================================== */
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+    min-height:
+        46px !important;
+
+    background:
+        var(--rp-white) !important;
+
+    border:
+        1px solid
+        #cfd4da !important;
+
+    border-radius:
+        12px !important;
+
+    box-shadow:
+        0 2px 8px
+        rgba(39,43,51,0.05) !important;
+
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease !important;
+}
+
+
+/* Input active state */
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper:focus-within {
+
+    border-color:
+        var(--rp-conversation) !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(75,93,255,0.14) !important;
+}
+
+
+/* ==========================================================
+   INPUT TEXT
+========================================================== */
+
+.root textarea,
+.root input {
+
+    color:
+        var(--rp-charcoal) !important;
+
+    font-size:
+        14px !important;
+}
+
+
+/* Placeholder */
+
+.root textarea::placeholder,
+.root input::placeholder {
+
+    color:
+        #92969d !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   SEND BUTTON
+========================================================== */
+
+.root button[class*="send"],
+.root [class*="send-button"] {
+
+    background-color:
+        var(--rp-conversation) !important;
+
+    color:
+        var(--rp-white) !important;
+
+    border-radius:
+        50% !important;
+
+    transition:
+        transform .15s ease,
+        background-color .15s ease !important;
+}
+
+
+.root button[class*="send"]:hover,
+.root [class*="send-button"]:hover {
+
+    background-color:
+        var(--rp-conversation-dark) !important;
+
+    transform:
+        scale(1.04);
+}
+
+
+/* ==========================================================
+   INPUT ICONS
+========================================================== */
+
+.root [class*="emoji"],
+.root [class*="attachment"],
+.root [class*="plus"] {
+
+    opacity:
+        .72;
+
+    transition:
+        opacity .15s ease;
+}
+
+
+.root [class*="emoji"]:hover,
+.root [class*="attachment"]:hover,
+.root [class*="plus"]:hover {
+
+    opacity:
+        1;
+}
+
+
+/* ==========================================================
+   CHAT LAUNCHER
+========================================================== */
+
+.root .chat-button.chat-button {
+
+    background-color:
+        var(--rp-brand) !important;
+
+    border:
+        2px solid
+        var(--rp-white) !important;
+
+    border-radius:
+        50% !important;
+
+    box-shadow:
+        0 7px 22px
+        rgba(35,39,46,.22) !important;
+
+    transition:
+        transform .18s ease,
+        background-color .18s ease !important;
+}
+
+
+.root .chat-button.chat-button:hover {
+
+    background-color:
+        var(--rp-brand-dark) !important;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+.root a {
+
+    color:
+        var(--rp-conversation) !important;
+
+    text-decoration:
+        none !important;
+}
+
+
+.root a:hover {
+
+    text-decoration:
+        underline !important;
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.root button:focus-visible,
+.root a:focus-visible,
+.root input:focus-visible,
+.root textarea:focus-visible {
+
+    outline:
+        3px solid
+        rgba(75,93,255,.22) !important;
+
+    outline-offset:
+        2px !important;
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:600px) {
+
+    .root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+        min-height:
+            46px !important;
+
+        border-radius:
+            11px !important;
+    }
+
+}
