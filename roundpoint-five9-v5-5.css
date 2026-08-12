@@ -1,1 +1,1034 @@
 
+/*
+============================================================
+ ROUNDPOINT MORTGAGE
+ FIVE9 WEB MESSENGER — V5
+ Clean consolidated production-style baseline
+============================================================
+*/
+
+
+/* ==========================================================
+   DESIGN TOKENS
+========================================================== */
+
+:root {
+
+    --rp-brand: #65758E;
+    --rp-brand-dark: #55657D;
+
+    --rp-action: #5367D9;
+    --rp-action-hover: #4356C5;
+    --rp-action-soft: #EEF1FF;
+
+    --rp-text: #484C54;
+    --rp-heading: #30343A;
+    --rp-muted: #7B7F87;
+    --rp-subtle: #9A9DA4;
+
+    --rp-white: #FFFFFF;
+    --rp-surface: #F7F8FA;
+
+    --rp-border: #DFE2E7;
+    --rp-border-dark: #CDD2D9;
+
+    --rp-radius: 14px;
+
+    --rp-shadow:
+        0 4px 16px rgba(34, 40, 48, 0.07);
+}
+
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+.root {
+
+    font-family:
+        "Helvetica Neue",
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    color:
+        var(--rp-text) !important;
+
+    -webkit-font-smoothing:
+        antialiased;
+}
+
+
+/* ==========================================================
+   CONVERSATION SURFACE
+========================================================== */
+
+.root .pn-msg-list {
+
+    background:
+        var(--rp-surface) !important;
+}
+
+
+.root .pn-msg-list-scroller {
+
+    padding-top:
+        8px !important;
+
+    padding-bottom:
+        10px !important;
+
+    scrollbar-width:
+        thin;
+
+    scrollbar-color:
+        #CDD1D7 transparent;
+}
+
+
+/* ==========================================================
+   ROUNDPOINT LOGO
+========================================================== */
+
+/*
+ Official current RoundPoint logo supplied from
+ roundpointmortgage.com
+*/
+
+.root .pn-msg-list-scroller::before {
+
+    content:
+        "" !important;
+
+    display:
+        block !important;
+
+    width:
+        190px !important;
+
+    height:
+        58px !important;
+
+    margin:
+        10px auto 0 auto !important;
+
+    background-image:
+        url("https://cdn-ildiied.nitrocdn.com/jbCTYQVcJIpxcoSiWtkKYsjwgnCWlMpM/assets/images/source/rev-4fe3128/roundpointmortgage.com/wp-content/uploads/2024/08/RP_Logo_C.svg") !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-position:
+        center !important;
+
+    background-size:
+        contain !important;
+
+    flex:
+        0 0 auto !important;
+}
+
+
+/* ==========================================================
+   FIVE9 FLEX SPACER
+========================================================== */
+
+/*
+ Five9 normally uses this spacer to push short
+ conversations downward.
+
+ The logo now provides the visual opening structure,
+ so the spacer is intentionally removed.
+*/
+
+.root .pn-msg-list__spacer {
+
+    flex:
+        0 0 0 !important;
+
+    min-height:
+        0 !important;
+
+    height:
+        0 !important;
+}
+
+
+/* ==========================================================
+   MESSAGE POSITIONING
+========================================================== */
+
+/*
+ Pull Clara's conversation slightly closer to the
+ RoundPoint logo.
+
+ This is intentionally modest so the logo and welcome
+ message feel connected without becoming crowded.
+*/
+
+.root .pn-msg-list-scroller .pn-msg {
+
+    position:
+        relative !important;
+
+    top:
+        -34px !important;
+
+    margin-top:
+        3px !important;
+
+    margin-bottom:
+        5px !important;
+}
+
+
+/* ==========================================================
+   CLARA / AGENT MESSAGE BUBBLE
+========================================================== */
+
+.root .pn-msg__bubble {
+
+    background:
+        var(--rp-white) !important;
+
+    border:
+        1px solid
+        rgba(45, 50, 58, 0.045) !important;
+
+    border-radius:
+        15px 15px 15px 6px !important;
+
+    box-shadow:
+        var(--rp-shadow) !important;
+
+    padding:
+        12px 14px !important;
+}
+
+
+/* ==========================================================
+   MESSAGE CONTENT
+========================================================== */
+
+.root .pn-msg__content {
+
+    color:
+        var(--rp-text) !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.46 !important;
+}
+
+
+.root .fn-helper__text {
+
+    color:
+        var(--rp-text) !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.46 !important;
+}
+
+
+.root .pn-msg__bubble p {
+
+    margin:
+        0 !important;
+
+    color:
+        var(--rp-text) !important;
+
+    line-height:
+        1.46 !important;
+}
+
+
+/* ==========================================================
+   AGENT NAME / LABEL
+========================================================== */
+
+.root .pn-msg [class*="label"],
+.root .pn-msg [class*="name"] {
+
+    color:
+        var(--rp-muted) !important;
+
+    font-size:
+        11px !important;
+}
+
+
+/* ==========================================================
+   TIMESTAMPS
+========================================================== */
+
+.root .pn-msg [class*="time"],
+.root .pn-msg [class*="timestamp"],
+.root .fn-helper__text + span {
+
+    color:
+        var(--rp-subtle) !important;
+
+    font-size:
+        10.5px !important;
+}
+
+
+/* ==========================================================
+   SYSTEM MESSAGES
+========================================================== */
+
+.root [class*="system"],
+.root [class*="joined"],
+.root [class*="event"] {
+
+    color:
+        var(--rp-muted) !important;
+
+    font-size:
+        12px !important;
+
+    font-weight:
+        400 !important;
+}
+
+
+/* ==========================================================
+   ASSISTANT AVATAR
+========================================================== */
+
+.root [class*="avatar"] {
+
+    box-shadow:
+        none !important;
+}
+
+
+.root [class*="avatar"] img,
+.root [class*="avatar"] > div {
+
+    border-radius:
+        50% !important;
+}
+
+
+/* ==========================================================
+   MESSAGE COMPOSER — OUTER SHELL
+========================================================== */
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+    min-height:
+        46px !important;
+
+    background:
+        var(--rp-white) !important;
+
+    border:
+        1px solid
+        var(--rp-border-dark) !important;
+
+    border-radius:
+        14px !important;
+
+    overflow:
+        hidden !important;
+
+    padding-left:
+        4px !important;
+
+    padding-right:
+        4px !important;
+
+    box-shadow:
+        0 1px 5px
+        rgba(36, 41, 49, 0.04) !important;
+
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease !important;
+}
+
+
+/* ==========================================================
+   COMPOSER — REMOVE FIVE9 INNER BORDERS
+========================================================== */
+
+.root .pn-msg-input__wrapper *,
+.root .pn-msg-input__wrapper textarea,
+.root .pn-msg-input__wrapper input,
+.root .pn-msg-input__wrapper [contenteditable="true"] {
+
+    border-color:
+        transparent !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+.root .pn-msg-input__wrapper textarea,
+.root .pn-msg-input__wrapper input,
+.root .pn-msg-input__wrapper [contenteditable="true"] {
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    outline:
+        0 !important;
+
+    border-radius:
+        0 !important;
+}
+
+
+.root .pn-msg-input__wrapper > div {
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        inherit !important;
+}
+
+
+/* ==========================================================
+   COMPOSER FOCUS STATE
+========================================================== */
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper:focus-within {
+
+    border:
+        1px solid
+        var(--rp-action) !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(83, 103, 217, 0.12) !important;
+}
+
+
+/* ==========================================================
+   INPUT TEXT
+========================================================== */
+
+.root textarea,
+.root input {
+
+    color:
+        var(--rp-heading) !important;
+
+    font-family:
+        inherit !important;
+
+    font-size:
+        14px !important;
+}
+
+
+.root textarea::placeholder,
+.root input::placeholder {
+
+    color:
+        #969AA2 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   BUTTONS INSIDE COMPOSER
+========================================================== */
+
+.root .pn-msg-input__wrapper button {
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/* ==========================================================
+   SEND BUTTON
+========================================================== */
+
+.root button[class*="send"],
+.root [class*="send-button"] {
+
+    background:
+        var(--rp-action) !important;
+
+    color:
+        var(--rp-white) !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        50% !important;
+
+    box-shadow:
+        none !important;
+
+    transition:
+        background-color .15s ease,
+        transform .15s ease !important;
+}
+
+
+.root button[class*="send"]:hover,
+.root [class*="send-button"]:hover {
+
+    background:
+        var(--rp-action-hover) !important;
+
+    transform:
+        scale(1.04);
+}
+
+
+/* ==========================================================
+   COMPOSER ICONS
+========================================================== */
+
+.root [class*="emoji"],
+.root [class*="attachment"],
+.root [class*="plus"] {
+
+    color:
+        var(--rp-muted) !important;
+
+    opacity:
+        .70 !important;
+
+    transition:
+        opacity .15s ease,
+        color .15s ease !important;
+}
+
+
+.root [class*="emoji"]:hover,
+.root [class*="attachment"]:hover,
+.root [class*="plus"]:hover {
+
+    color:
+        var(--rp-heading) !important;
+
+    opacity:
+        1 !important;
+}
+
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+.root a {
+
+    color:
+        var(--rp-action) !important;
+
+    font-weight:
+        500 !important;
+
+    text-decoration:
+        none !important;
+}
+
+
+.root a:hover {
+
+    color:
+        var(--rp-action-hover) !important;
+
+    text-decoration:
+        underline !important;
+}
+
+
+/* ==========================================================
+   QUICK REPLIES / ACTION BUTTONS
+========================================================== */
+
+.root button[class*="reply"],
+.root button[class*="action"] {
+
+    background:
+        var(--rp-white) !important;
+
+    color:
+        var(--rp-action) !important;
+
+    border:
+        1px solid
+        var(--rp-action) !important;
+
+    border-radius:
+        999px !important;
+
+    font-family:
+        inherit !important;
+
+    font-size:
+        13px !important;
+
+    font-weight:
+        500 !important;
+
+    transition:
+        background-color .15s ease,
+        transform .15s ease !important;
+}
+
+
+.root button[class*="reply"]:hover,
+.root button[class*="action"]:hover {
+
+    background:
+        var(--rp-action-soft) !important;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* ==========================================================
+   CHAT LAUNCHER
+========================================================== */
+
+.root .chat-button.chat-button {
+
+    background:
+        var(--rp-brand) !important;
+
+    color:
+        var(--rp-white) !important;
+
+    border:
+        2px solid
+        var(--rp-white) !important;
+
+    border-radius:
+        50% !important;
+
+    box-shadow:
+        0 7px 22px
+        rgba(38, 43, 52, .22) !important;
+
+    transition:
+        background-color .16s ease,
+        transform .16s ease,
+        box-shadow .16s ease !important;
+}
+
+
+.root .chat-button.chat-button:hover {
+
+    background:
+        var(--rp-brand-dark) !important;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 9px 24px
+        rgba(38, 43, 52, .26) !important;
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+.root .pn-msg-list-scroller::-webkit-scrollbar {
+
+    width:
+        6px;
+}
+
+
+.root .pn-msg-list-scroller::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+}
+
+
+.root .pn-msg-list-scroller::-webkit-scrollbar-thumb {
+
+    background:
+        #CDD1D7;
+
+    border-radius:
+        10px;
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.root button:focus-visible,
+.root a:focus-visible,
+.root input:focus-visible,
+.root textarea:focus-visible {
+
+    outline:
+        3px solid
+        rgba(83, 103, 217, .20) !important;
+
+    outline-offset:
+        2px !important;
+}
+
+
+/* ==========================================================
+   FIVE9 NARROW-WIDGET / MOBILE HANDLING
+========================================================== */
+
+/*
+ Five9's desktop preview is narrow enough to activate
+ mobile media queries, so these values intentionally
+ preserve the desired desktop-preview appearance.
+*/
+
+@media (max-width: 600px) {
+
+    .root .pn-msg-list-scroller::before {
+
+        width:
+            190px !important;
+
+        height:
+            58px !important;
+
+        margin:
+            10px auto 0 auto !important;
+    }
+
+
+    .root .pn-msg-list__spacer {
+
+        flex:
+            0 0 0 !important;
+
+        min-height:
+            0 !important;
+
+        height:
+            0 !important;
+    }
+
+
+    .root .pn-msg-list-scroller .pn-msg {
+
+        top:
+            -34px !important;
+    }
+
+
+    .root .pn-msg__bubble {
+
+        padding:
+            11px 13px !important;
+
+        border-radius:
+            14px 14px 14px 6px !important;
+    }
+
+
+    .root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+        min-height:
+            46px !important;
+
+        border-radius:
+            13px !important;
+    }
+}
+/* ==========================================================
+   V5.2 — REPLACE CLARA INITIALS WITH ROUNDPOINT ICON
+   Confirmed Five9 DOM:
+   div.avatar.placeholder
+========================================================== */
+
+.root .avatar.placeholder {
+
+    width:
+        32px !important;
+
+    height:
+        32px !important;
+
+    min-width:
+        32px !important;
+
+    min-height:
+        32px !important;
+
+    border-radius:
+        50% !important;
+
+    background-color:
+        #FFFFFF !important;
+
+    background-image:
+        url("https://cdn.jsdelivr.net/gh/mrfabianrussell-hue/five9-webmessenger-test@main/roundpoint-business-icon.png") !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-position:
+        center !important;
+
+    background-size:
+        24px 24px !important;
+
+    border:
+        1px solid #E2E4E8 !important;
+
+    box-shadow:
+        0 2px 6px rgba(40, 45, 54, 0.08) !important;
+
+    overflow:
+        hidden !important;
+}
+
+
+/*
+ Hide Five9's generated CL initials while keeping
+ the avatar element itself intact.
+*/
+
+.root .avatar.placeholder > div {
+
+    color:
+        transparent !important;
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+
+    text-shadow:
+        none !important;
+}
+
+
+/*
+ Prevent text from reappearing through nested spans
+ or utility elements.
+*/
+
+.root .avatar.placeholder span {
+
+    color:
+        transparent !important;
+
+    opacity:
+        0 !important;
+}
+/* ==========================================================
+   V5.3 — FINAL COMPOSER + SEND BUTTON REFINEMENT
+========================================================== */
+
+/*
+ Match action controls to the RoundPoint slate header.
+*/
+
+.root {
+    --rp-action: #65758E !important;
+    --rp-action-hover: #55657D !important;
+}
+
+
+/* ==========================================================
+   COMPOSER — REMOVE DOUBLE / PURPLE FOCUS OUTLINE
+========================================================== */
+
+/*
+ Keep one clean border around the complete composer.
+*/
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+    border:
+        1px solid #CDD2D9 !important;
+
+    border-radius:
+        14px !important;
+
+    box-shadow:
+        none !important;
+
+    outline:
+        none !important;
+}
+
+
+/*
+ Focus should be communicated by a subtle slate border only.
+ No secondary blue/purple ring.
+*/
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper:focus,
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper:focus-within,
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper:focus-visible {
+
+    border:
+        1px solid #65758E !important;
+
+    box-shadow:
+        none !important;
+
+    outline:
+        none !important;
+}
+
+
+/*
+ Five9 can apply its own focus treatment to nested elements.
+ Remove those so the OUTER composer is the only visible shell.
+*/
+
+.root .pn-msg-input__wrapper *:focus,
+.root .pn-msg-input__wrapper *:focus-visible,
+.root .pn-msg-input__wrapper textarea:focus,
+.root .pn-msg-input__wrapper textarea:focus-visible,
+.root .pn-msg-input__wrapper input:focus,
+.root .pn-msg-input__wrapper input:focus-visible,
+.root .pn-msg-input__wrapper [contenteditable="true"]:focus,
+.root .pn-msg-input__wrapper [contenteditable="true"]:focus-visible {
+
+    outline:
+        none !important;
+
+    box-shadow:
+        none !important;
+
+    border-color:
+        transparent !important;
+}
+
+
+/* ==========================================================
+   SEND BUTTON — ROUNDPOINT SLATE
+========================================================== */
+
+.root button[class*="send"],
+.root [class*="send-button"] {
+
+    background:
+        #65758E !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+.root button[class*="send"]:hover,
+.root [class*="send-button"]:hover {
+
+    background:
+        #55657D !important;
+}
+
+
+/*
+ Prevent Five9's button focus state from restoring
+ the electric blue/purple halo.
+*/
+
+.root button[class*="send"]:focus,
+.root button[class*="send"]:focus-visible,
+.root [class*="send-button"]:focus,
+.root [class*="send-button"]:focus-visible {
+
+    outline:
+        none !important;
+
+    box-shadow:
+        0 0 0 2px rgba(101, 117, 142, 0.18) !important;
+}
+/* ==========================================================
+   V5.5 — FINAL FIVE9 SEND BUTTON OVERRIDE
+   Exact DOM confirmed in DevTools
+========================================================== */
+
+/* Outer send button */
+.root .pn-msg-input__send {
+    background: #65758E !important;
+    background-color: #65758E !important;
+    border-color: #65758E !important;
+    box-shadow: none !important;
+}
+
+/* Inner Five9 send container */
+.root .pn-msg-input__send #send-div {
+    background: #65758E !important;
+    background-color: #65758E !important;
+    border-radius: 50% !important;
+}
+
+/* Five9 SVG blue background */
+.root .pn-msg-input__send #send-div svg rect {
+    fill: #65758E !important;
+    stroke: #65758E !important;
+}
+
+/* Keep arrow white */
+.root .pn-msg-input__send #send-div svg g,
+.root .pn-msg-input__send #send-div svg path {
+    fill: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+}
+
+/* Hover */
+.root .pn-msg-input__send:hover,
+.root .pn-msg-input__send:hover #send-div {
+    background: #55657D !important;
+    background-color: #55657D !important;
+}
+
+.root .pn-msg-input__send:hover #send-div svg rect {
+    fill: #55657D !important;
+    stroke: #55657D !important;
+}
+
+/* Remove unwanted Five9 focus glow */
+.root .pn-msg-input__send:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Keep an accessible keyboard focus state */
+.root .pn-msg-input__send:focus-visible {
+    outline: 2px solid #65758E !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+}
