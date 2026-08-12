@@ -1,1 +1,1011 @@
 
+/*
+============================================================
+ ROUNDPOINT MORTGAGE
+ FIVE9 WEB MESSENGER — V4
+ Production-style branded theme
+============================================================
+*/
+
+
+/* ==========================================================
+   DESIGN TOKENS
+========================================================== */
+
+:root {
+
+    /* RoundPoint / Five9 coordinated palette */
+
+    --rp-brand: #65758E;
+    --rp-brand-dark: #55657D;
+
+    --rp-action: #5367D9;
+    --rp-action-hover: #4356C5;
+    --rp-action-soft: #EEF1FF;
+
+    --rp-text: #484C54;
+    --rp-heading: #30343A;
+    --rp-muted: #7B7F87;
+    --rp-subtle: #9A9DA4;
+
+    --rp-white: #FFFFFF;
+
+    --rp-surface: #F7F8FA;
+    --rp-surface-soft: #FAFAFB;
+
+    --rp-border: #DFE2E7;
+    --rp-border-dark: #CDD2D9;
+
+    --rp-success: #46A880;
+
+    --rp-radius: 14px;
+    --rp-radius-sm: 10px;
+
+    --rp-shadow:
+        0 4px 16px rgba(34, 40, 48, 0.07);
+
+}
+
+
+/* ==========================================================
+   GLOBAL TYPOGRAPHY
+========================================================== */
+
+.root {
+
+    font-family:
+        "Helvetica Neue",
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    color:
+        var(--rp-text) !important;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+}
+
+
+/* ==========================================================
+   MAIN CONVERSATION SURFACE
+========================================================== */
+
+.root .pn-msg-list {
+
+    background:
+        var(--rp-surface) !important;
+
+}
+
+
+/* ==========================================================
+   FIVE9 FLEX SPACER
+========================================================== */
+
+/*
+ Five9 inserts a flexible spacer above short conversations.
+
+ We've confirmed this element directly in the live DOM.
+
+ Keep a small amount of breathing room without allowing the
+ conversation to be pushed to the bottom of the messenger.
+*/
+
+.root .pn-msg-list__spacer {
+
+    flex:
+        0 0 28px !important;
+
+    min-height:
+        28px !important;
+
+}
+
+
+/* ==========================================================
+   CONVERSATION SCROLLER
+========================================================== */
+
+.root .pn-msg-list-scroller {
+
+    padding-top:
+        12px !important;
+
+    padding-bottom:
+        10px !important;
+
+}
+
+
+/* ==========================================================
+   INDIVIDUAL MESSAGE ROW
+========================================================== */
+
+.root .pn-msg {
+
+    margin-top:
+        3px !important;
+
+    margin-bottom:
+        5px !important;
+
+}
+
+
+/* ==========================================================
+   ROBIN / CLARA MESSAGE BUBBLE
+========================================================== */
+
+/*
+ Confirmed Five9 DOM class:
+ .pn-msg__bubble
+*/
+
+.root .pn-msg__bubble {
+
+    background:
+        var(--rp-white) !important;
+
+    border:
+        1px solid
+        rgba(45, 50, 58, 0.045) !important;
+
+    border-radius:
+        15px 15px 15px 6px !important;
+
+    box-shadow:
+        var(--rp-shadow) !important;
+
+    padding:
+        12px 14px !important;
+
+}
+
+
+/* ==========================================================
+   MESSAGE CONTENT
+========================================================== */
+
+.root .pn-msg__content {
+
+    color:
+        var(--rp-text) !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.46 !important;
+
+}
+
+
+/* Five9 helper text container */
+
+.root .fn-helper__text {
+
+    color:
+        var(--rp-text) !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.46 !important;
+
+}
+
+
+/* Paragraph inside message */
+
+.root .pn-msg__bubble p {
+
+    margin:
+        0 !important;
+
+    color:
+        var(--rp-text) !important;
+
+    line-height:
+        1.46 !important;
+
+}
+
+
+/* ==========================================================
+   MESSAGE LABELS / AGENT NAME
+========================================================== */
+
+.root .pn-msg [class*="label"],
+.root .pn-msg [class*="name"] {
+
+    color:
+        var(--rp-muted) !important;
+
+    font-size:
+        11px !important;
+
+}
+
+
+/* ==========================================================
+   TIMESTAMPS
+========================================================== */
+
+.root .pn-msg [class*="time"],
+.root .pn-msg [class*="timestamp"],
+.root .fn-helper__text + span {
+
+    color:
+        var(--rp-subtle) !important;
+
+    font-size:
+        10.5px !important;
+
+}
+
+
+/* ==========================================================
+   SYSTEM / JOIN MESSAGES
+========================================================== */
+
+.root [class*="system"],
+.root [class*="joined"],
+.root [class*="event"] {
+
+    color:
+        var(--rp-muted) !important;
+
+    font-size:
+        12.5px !important;
+
+    font-weight:
+        400 !important;
+
+}
+
+
+/* ==========================================================
+   ASSISTANT AVATAR
+========================================================== */
+
+.root [class*="avatar"] {
+
+    box-shadow:
+        none !important;
+
+}
+
+
+.root [class*="avatar"] img,
+.root [class*="avatar"] > div {
+
+    border-radius:
+        50% !important;
+
+}
+
+
+/* ==========================================================
+   COMPOSER / INPUT AREA
+========================================================== */
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+    min-height:
+        46px !important;
+
+    background:
+        var(--rp-white) !important;
+
+    border:
+        1px solid
+        var(--rp-border-dark) !important;
+
+    border-radius:
+        13px !important;
+
+    box-shadow:
+        0 1px 5px
+        rgba(36, 41, 49, 0.045) !important;
+
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease !important;
+
+}
+
+
+/* Focus state */
+
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper:focus-within {
+
+    border-color:
+        var(--rp-action) !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(83, 103, 217, .11) !important;
+
+}
+
+
+/* ==========================================================
+   INPUT TEXT
+========================================================== */
+
+.root textarea,
+.root input {
+
+    color:
+        var(--rp-heading) !important;
+
+    font-family:
+        inherit !important;
+
+    font-size:
+        14px !important;
+
+}
+
+
+/* Placeholder */
+
+.root textarea::placeholder,
+.root input::placeholder {
+
+    color:
+        #969AA2 !important;
+
+    opacity:
+        1 !important;
+
+}
+
+
+/* ==========================================================
+   SEND BUTTON
+========================================================== */
+
+.root button[class*="send"],
+.root [class*="send-button"] {
+
+    background:
+        var(--rp-action) !important;
+
+    color:
+        var(--rp-white) !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        50% !important;
+
+    box-shadow:
+        none !important;
+
+    transition:
+        background-color .15s ease,
+        transform .15s ease !important;
+
+}
+
+
+.root button[class*="send"]:hover,
+.root [class*="send-button"]:hover {
+
+    background:
+        var(--rp-action-hover) !important;
+
+    transform:
+        scale(1.04);
+
+}
+
+
+/* ==========================================================
+   INPUT ICONS
+========================================================== */
+
+.root [class*="emoji"],
+.root [class*="attachment"],
+.root [class*="plus"] {
+
+    color:
+        var(--rp-muted) !important;
+
+    opacity:
+        .70 !important;
+
+    transition:
+        opacity .15s ease,
+        color .15s ease !important;
+
+}
+
+
+.root [class*="emoji"]:hover,
+.root [class*="attachment"]:hover,
+.root [class*="plus"]:hover {
+
+    color:
+        var(--rp-heading) !important;
+
+    opacity:
+        1 !important;
+
+}
+
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+.root a {
+
+    color:
+        var(--rp-action) !important;
+
+    font-weight:
+        500 !important;
+
+    text-decoration:
+        none !important;
+
+}
+
+
+.root a:hover {
+
+    color:
+        var(--rp-action-hover) !important;
+
+    text-decoration:
+        underline !important;
+
+}
+
+
+/* ==========================================================
+   QUICK REPLIES / ACTION BUTTONS
+========================================================== */
+
+.root button[class*="reply"],
+.root button[class*="action"] {
+
+    background:
+        var(--rp-white) !important;
+
+    color:
+        var(--rp-action) !important;
+
+    border:
+        1px solid
+        var(--rp-action) !important;
+
+    border-radius:
+        999px !important;
+
+    font-family:
+        inherit !important;
+
+    font-size:
+        13px !important;
+
+    font-weight:
+        500 !important;
+
+    transition:
+        background-color .15s ease,
+        color .15s ease,
+        transform .15s ease !important;
+
+}
+
+
+.root button[class*="reply"]:hover,
+.root button[class*="action"]:hover {
+
+    background:
+        var(--rp-action-soft) !important;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* ==========================================================
+   CHAT LAUNCHER
+========================================================== */
+
+.root .chat-button.chat-button {
+
+    background:
+        var(--rp-brand) !important;
+
+    color:
+        var(--rp-white) !important;
+
+    border:
+        2px solid
+        var(--rp-white) !important;
+
+    border-radius:
+        50% !important;
+
+    box-shadow:
+        0 7px 22px
+        rgba(38, 43, 52, .22) !important;
+
+    transition:
+        background-color .16s ease,
+        transform .16s ease,
+        box-shadow .16s ease !important;
+
+}
+
+
+.root .chat-button.chat-button:hover {
+
+    background:
+        var(--rp-brand-dark) !important;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 9px 24px
+        rgba(38, 43, 52, .26) !important;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+.root .pn-msg-list-scroller {
+
+    scrollbar-width:
+        thin;
+
+    scrollbar-color:
+        #CDD1D7 transparent;
+
+}
+
+
+.root .pn-msg-list-scroller::-webkit-scrollbar {
+
+    width:
+        6px;
+
+}
+
+
+.root .pn-msg-list-scroller::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+
+}
+
+
+.root .pn-msg-list-scroller::-webkit-scrollbar-thumb {
+
+    background:
+        #CDD1D7;
+
+    border-radius:
+        10px;
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITY
+========================================================== */
+
+.root button:focus-visible,
+.root a:focus-visible,
+.root input:focus-visible,
+.root textarea:focus-visible {
+
+    outline:
+        3px solid
+        rgba(83, 103, 217, .22) !important;
+
+    outline-offset:
+        2px !important;
+
+}
+
+
+/* ==========================================================
+   MOBILE OPTIMIZATION
+========================================================== */
+
+@media (max-width: 600px) {
+
+
+    .root .pn-msg-list__spacer {
+
+        flex:
+            0 0 20px !important;
+
+        min-height:
+            20px !important;
+
+    }
+
+
+    .root .pn-msg-list-scroller {
+
+        padding-top:
+            10px !important;
+
+    }
+
+
+    .root .pn-msg__bubble {
+
+        padding:
+            11px 13px !important;
+
+        border-radius:
+            14px 14px 14px 6px !important;
+
+    }
+
+
+    .root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+        min-height:
+            46px !important;
+
+        border-radius:
+            12px !important;
+
+    }
+
+}
+/* ==========================================================
+   ROUNDPOINT TAGLINE
+   "YOUR LOAN. CLEAR ANSWERS."
+========================================================== */
+
+/*
+ Five9 renders the opening tagline within the upper
+ conversation area.
+
+ Give the tagline more visual presence while keeping
+ it secondary to the actual conversation.
+*/
+
+.root .pn-msg-list__spinner + span,
+.root [class*="spinner"] + span {
+
+    color:
+        #65758E !important;
+
+    font-size:
+        11px !important;
+
+    font-weight:
+        600 !important;
+
+    line-height:
+        1.4 !important;
+
+    letter-spacing:
+        0.65px !important;
+
+    text-transform:
+        uppercase !important;
+
+}
+
+
+/*
+ Add slightly more intentional spacing around
+ the opening brand statement.
+*/
+
+.root .pn-msg-list__spinner {
+
+    margin-bottom:
+        6px !important;
+
+}
+/* ==========================================================
+   V4.2 — FIX FIVE9 MESSAGE COMPOSER SHAPE
+========================================================== */
+
+/*
+ Outer composer wrapper
+*/
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+    background:
+        #FFFFFF !important;
+
+    border:
+        1px solid #CDD2D9 !important;
+
+    border-radius:
+        14px !important;
+
+    overflow:
+        hidden !important;
+
+    box-shadow:
+        0 1px 5px rgba(36, 41, 49, 0.04) !important;
+
+}
+
+
+/*
+ Remove conflicting borders/backgrounds from nested
+ Five9 composer elements.
+*/
+.root .pn-msg-input__wrapper *,
+.root .pn-msg-input__wrapper textarea,
+.root .pn-msg-input__wrapper input,
+.root .pn-msg-input__wrapper [contenteditable="true"] {
+
+    border-color:
+        transparent !important;
+
+    box-shadow:
+        none !important;
+
+}
+
+
+/*
+ Inner text-entry area
+*/
+.root .pn-msg-input__wrapper textarea,
+.root .pn-msg-input__wrapper input,
+.root .pn-msg-input__wrapper [contenteditable="true"] {
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    outline:
+        0 !important;
+
+    border-radius:
+        0 !important;
+
+}
+
+
+/*
+ Focus state applied to the complete composer,
+ not just the inner text field.
+*/
+.root .pn-msg-input__wrapper.pn-msg-input__wrapper:focus-within {
+
+    border:
+        1px solid #5367D9 !important;
+
+    box-shadow:
+        0 0 0 2px rgba(83, 103, 217, 0.14) !important;
+
+}
+
+
+/*
+ Prevent nested Five9 controls from creating
+ square edges inside the rounded shell.
+*/
+.root .pn-msg-input__wrapper > div {
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        inherit !important;
+
+}
+
+
+/*
+ Keep left / right action areas aligned
+ within the rounded composer.
+*/
+.root .pn-msg-input__wrapper button {
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+
+}
+
+
+/*
+ Ensure icons do not protrude beyond rounded boundary.
+*/
+.root .pn-msg-input__wrapper {
+
+    padding-left:
+        4px !important;
+
+    padding-right:
+        4px !important;
+
+}
+
+
+/*
+ Mobile consistency
+*/
+@media (max-width: 600px) {
+
+    .root .pn-msg-input__wrapper.pn-msg-input__wrapper {
+
+        border-radius:
+            13px !important;
+
+    }
+
+}
+/* ==========================================================
+   V4.3 — ROUNDPOINT OPENING TAGLINE
+   YOUR LOAN. CLEAR ANSWERS.
+========================================================== */
+
+
+/*
+ Five9 opening / informational text treatment.
+ Increase presence of the RoundPoint tagline.
+*/
+
+.root .pn-msg-list-scroller > span,
+.root .pn-msg-list-scroller > div > span {
+
+    color:
+        #65758E !important;
+
+    font-size:
+        13px !important;
+
+    font-weight:
+        600 !important;
+
+    line-height:
+        1.4 !important;
+
+    letter-spacing:
+        0.45px !important;
+
+}
+
+
+/*
+ Additional Five9 opening-text targets
+*/
+
+.root .pn-msg-list [class*="spinner"] + span,
+.root .pn-msg-list [class*="spinner"] ~ span {
+
+    color:
+        #65758E !important;
+
+    font-size:
+        13px !important;
+
+    font-weight:
+        600 !important;
+
+    line-height:
+        1.4 !important;
+
+    letter-spacing:
+        0.45px !important;
+
+}
+
+
+/*
+ Give opening statement a little breathing room.
+*/
+
+.root .pn-msg-list__spinner {
+
+    margin-bottom:
+        8px !important;
+
+}
+/* ==========================================================
+   V4.4 — ROUNDPOINT LOGO ABOVE WELCOME MESSAGE
+========================================================== */
+
+/*
+ Use the actual RoundPoint logo asset.
+ No AI recreation — this references the official SVG directly.
+*/
+
+.root .pn-msg-list-scroller::before {
+
+    content: "";
+
+    display:
+        block !important;
+
+    width:
+        180px !important;
+
+    height:
+        70px !important;
+
+    margin:
+        18px auto 14px auto !important;
+
+    background-image:
+        url("https://cdn-ildiied.nitrocdn.com/jbCTYQVcJIpxcoSiWtkKYsjwgnCWlMpM/assets/images/source/rev-4fe3128/roundpointmortgage.com/wp-content/uploads/2024/08/RP_Logo_C.svg") !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-position:
+        center !important;
+
+    background-size:
+        contain !important;
+
+    flex:
+        0 0 auto !important;
+
+}
+
+
+/*
+ Reduce the spacer slightly now that the logo provides
+ the visual opening element.
+*/
+
+.root .pn-msg-list__spacer {
+
+    flex:
+        0 0 18px !important;
+
+    min-height:
+        18px !important;
+
+}
+
+
+/*
+ Mobile logo sizing
+*/
+
+@media (max-width: 600px) {
+
+    .root .pn-msg-list-scroller::before {
+
+        width:
+            155px !important;
+
+        height:
+            60px !important;
+
+        margin:
+            14px auto 12px auto !important;
+
+    }
+
+}
