@@ -672,3 +672,51 @@
     }
 
 }
+/* ==========================================================
+   ROUNDPOINT TAGLINE
+   "YOUR LOAN. CLEAR ANSWERS."
+========================================================== */
+
+/*
+ Five9 renders the opening tagline within the upper
+ conversation area.
+
+ Give the tagline more visual presence while keeping
+ it secondary to the actual conversation.
+*/
+
+.root .pn-msg-list__spinner + span,
+.root [class*="spinner"] + span {
+
+    color:
+        #65758E !important;
+
+    font-size:
+        11px !important;
+
+    font-weight:
+        600 !important;
+
+    line-height:
+        1.4 !important;
+
+    letter-spacing:
+        0.65px !important;
+
+    text-transform:
+        uppercase !important;
+
+}
+
+
+/*
+ Add slightly more intentional spacing around
+ the opening brand statement.
+*/
+
+.root .pn-msg-list__spinner {
+
+    margin-bottom:
+        6px !important;
+
+}
