@@ -414,3 +414,48 @@ Subtle modernization of round avatar
     }
 
 }
+/* ==========================================================
+   V3 TEST — FIVE9 MESSAGE LIST SPACING
+   Based on actual Five9 DOM inspection
+========================================================== */
+
+
+/*
+ Five9 uses this flex spacer to push conversation
+ content toward the bottom of the messenger.
+
+ Reduce it so the opening experience doesn't have
+ such a large empty area.
+*/
+
+.root .pn-msg-list__spacer {
+    flex:
+        0 0 38px !important;
+
+    min-height:
+        38px !important;
+}
+
+
+/*
+ Give the actual scrolling conversation area
+ more intentional padding.
+*/
+
+.root .pn-msg-list-scroller {
+    padding-top:
+        16px !important;
+}
+
+
+/*
+ Individual Five9 message rows
+*/
+
+.root .pn-msg {
+    margin-top:
+        4px !important;
+
+    margin-bottom:
+        4px !important;
+}
